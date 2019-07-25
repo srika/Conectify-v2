@@ -1,8 +1,29 @@
 const express = require("express");
+// const bodyParser = require('body-parser');
+const connectDB = require("./config/db");
+
+const auth = require("./routes/api/auth");
+const users = require("./routes/api/users");
+const profile = require("./routes/api/profile");
+const posts = require("./routes/api/posts");
+
 const app = express();
 
-app.get('/', (req, res) => res.send("API Running"));
+// Body parser middleware
+// app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.json());
+app.use(express.json({ extended: false }));
 
+// Connect Database
+connectDB();
+
+app.get("/", (req, res) => res.send("API Running"));
+
+// Use Routes
+app.use("/api/auth", auth);
+app.use("/api/users", users);
+app.use("/api/profile", profile);
+app.use("/api/posts", posts);
 
 const PORT = process.env.PORT || 5000;
 
