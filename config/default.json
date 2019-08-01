@@ -1,6 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://sri7663:sri7663@conectify-fhcrv.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "",
     "jwtSecret": "secret",
-    "githubClientId": "713de16b923dc5a76f03",
-    "githubSecret": "62e4b5d62ccad94cb920dd753a10f6f9d07d4552"
+    "githubClientId": "",
+    "githubSecret": ""
 }
